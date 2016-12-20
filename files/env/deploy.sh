@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cd /home/libre/work && lein run
+/db.sh && cd /home/libre/work && /home/libre/.local/bin/lein run

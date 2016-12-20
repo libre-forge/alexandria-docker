@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+docker run --rm -it \
+       -p 3030:3030 \
+       -v $PWD:/home/libre/work/ \
+       -v $HOME/.m2/:/home/libre/.m2 \
+       -v $HOME/.lein/:/home/libre/.lein \
+       -v $HOME/.gradle:/home/libre/.gradle \
+       -v /etc/localtime:/etc/localtime:ro \
+       -v /tmp/.X11-unix:/tmp/.X11-unix \
+       -v /tmp/hatak:/data/hatak \
+       -e DISPLAY=unix$DISPLAY \
+       --entrypoint=/deploy.sh libreforge/dev
