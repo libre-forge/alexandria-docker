@@ -51,6 +51,7 @@ RUN echo "libre ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && \
 USER libre
 
 COPY files/env/lein /home/libre/.local/bin/lein
+RUN sudo chown libre:users /home/libre/.local/bin/lein
 RUN sudo chmod +x /home/libre/.local/bin/lein
 RUN bash -c "/home/libre/.local/bin/lein version"
 
