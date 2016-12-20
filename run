@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Setting Developer environment variables. Only used by the
+# docker-compose.yml
+
+source ./bin/set-env
+
+# Running docker-compose to open the development console. It will
+# start a tmux session. Because `docker-compose run` doesn't allow
+# ports defined in docker-compose.yml to be expose for the image
+# referenced (`dev`), that's why we're exposing them in the command
+# line.
+docker-compose run -p 5050:5050 dev && docker-compose stop

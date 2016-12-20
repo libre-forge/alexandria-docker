@@ -1,0 +1,5 @@
+#!/bin/sh
+# All environment variables in this file will be used in the
+# `docker-compose.yml` file. These variables won't be available inside
+# any container.
+export DEV="${HOME}/Development/ws/libreforge-back/"
